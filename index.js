@@ -1,7 +1,10 @@
 import generateMap from "./frame/generateMap/index.js";
 import populateCubes from "./frame/populateCubes/index.js";
 
-import moveDown from './functions/movements/moveDown/index.js'
+import moveDown from "./functions/movements/moveDown/index.js";
+import moveLeft from "./functions/movements/moveLeft/index.js";
+import moveRight from "./functions/movements/moveRight/index.js";
+import moveUp from "./functions/movements/moveUp/index.js";
 
 const frame = document.getElementById("frame");
 
@@ -11,7 +14,7 @@ document.addEventListener("keydown", function (event) {
   handleNav(event);
 });
 
-// tableau matrice 
+// tableau matrice
 let game = [
   [2, 0, 0, 0],
   [0, 0, 2, 0],
@@ -20,7 +23,7 @@ let game = [
 ];
 
 function handleNav(event) {
-  //en fonction de la touche on change de direction 
+  //en fonction de la touche on change de direction
   switch (event.key) {
     case "z":
       game = moveUp(game);
