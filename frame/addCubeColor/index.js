@@ -25,7 +25,7 @@ function addCubeColor(cube, value) {
       cube.style.backgroundColor = "yellow";
       break;
     case 512:
-      cube.style.backgroundColor = "darkgoldenrod";
+      cube.style.backgroundColor = "rgb(255, 183, 0)";
       break;
     case 1024:
       cube.style.backgroundColor = "lightblue";
