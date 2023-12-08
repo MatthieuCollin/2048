@@ -6,6 +6,8 @@ import moveLeft from "./functions/movements/moveLeft/index.js";
 import moveRight from "./functions/movements/moveRight/index.js";
 import moveUp from "./functions/movements/moveUp/index.js";
 
+import populateArray from "./functions/populateArray/index.js";
+
 const frame = document.getElementById("frame");
 
 // quand input clavier
@@ -16,10 +18,10 @@ document.addEventListener("keydown", function (event) {
 
 // tableau matrice
 let game = [
-  [4, 2, 4, 2],
-  [0, 0, 2, 0],
-  [2, 0, 0, 2],
-  [0, 2, 0, 4],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
 ];
 
 function handleNav(event) {
@@ -38,7 +40,10 @@ function handleNav(event) {
       game = moveRight(game);
       break;
   }
+  game = populateArray(1, game);
   populateCubes(game);
 }
+
+game = populateArray(3, game);
 
 generateMap(game, frame);
