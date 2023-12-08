@@ -12,13 +12,20 @@ function slideXArray(array, size, reverse) {
   array = calculateArray(array);
   // cf filterEmpty
   array = filterEmpty(array);
-  // on repeuple le tableau
-  while (array.length < size) {
-    array.push(0);
-  }
+
   // si reverse on reverse le tableau
   if (reverse) {
-    array = array.reverse();
+    // on repeuple le tableau
+
+    while (array.length < size) {
+      array.unshift(0);
+    }
+  } else {
+    // on repeuple le tableau
+
+    while (array.length < size) {
+      array.push(0);
+    }
   }
   return array;
 }

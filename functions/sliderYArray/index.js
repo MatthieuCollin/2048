@@ -15,6 +15,7 @@ function slideYArray(array, size, reverse) {
       // on ajoute la valeur qui est position 0,0 | 0,1 | 0,2, etc...
       newArray.push(array[j][i]);
     }
+    //array de mémoire
     // cf filterEmpty
     newArray = filterEmpty(newArray);
     // cf calculateArray
@@ -23,14 +24,18 @@ function slideYArray(array, size, reverse) {
     newArray = filterEmpty(newArray);
 
     // on repeuple le tableau
-    while (newArray.length < size) {
-      newArray.push(0);
-    }
 
     // si reverse on reverse le tableau
     if (reverse) {
-      newArray = newArray.reverse();
+      while (newArray.length < size) {
+        newArray.unshift(0);
+      }
+    } else {
+      while (newArray.length < size) {
+        newArray.push(0);
+      }
     }
+
     // on remet les valeurs du tableau mémoire à leur place dans la matrice
     for (let x = 0; x < size; x++) {
       array[x][i] = newArray[x];
