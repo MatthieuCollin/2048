@@ -9,11 +9,16 @@ import moveUp from "./functions/movements/moveUp/index.js";
 import populateArray from "./functions/populateArray/index.js";
 
 const frame = document.getElementById("frame");
+const start = document.getElementById("start");
+const popup = document.getElementById("popup");
 
-// quand input clavier
-document.addEventListener("keydown", function (event) {
-  // on check l'event
-  handleNav(event);
+start.addEventListener("click", function (event) {
+  // quand input clavier
+  popup.remove();
+  document.addEventListener("keydown", function (event) {
+    // on check l'event
+    handleNav(event);
+  });
 });
 
 // tableau matrice
