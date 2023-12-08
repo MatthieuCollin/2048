@@ -1,4 +1,7 @@
-// TODO Mettre couleur  sur chaque case en fonction du numéro
+import addCubeColor from "../addCubeColor/index.js";
+
+// TODO Mettre couleur  sur chaque case en  fonction du numéro
+
 function populateCubes(game) {
   // pour chaque ligne
   for (let i = 0; i < game.length; i++) {
@@ -9,9 +12,11 @@ function populateCubes(game) {
       // si la position dans la matrice est différente de 0 alors on mets le chiffre correspondant
       if (game[i][j] !== 0) {
         cube.innerHTML = game[i][j];
+        addCubeColor(cube, game[i][j]);
       } else {
         // sinon r
         cube.innerHTML = "";
+        cube.style.backgroundColor = "lightgrey";
       }
     }
   }

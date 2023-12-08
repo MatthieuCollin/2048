@@ -29,10 +29,11 @@ body{
 }
 
 .cube{
-    background-color: pink;
+    background-color: lightgrey;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2vw;
+    background-color: lightskyblue;
 }
