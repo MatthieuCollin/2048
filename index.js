@@ -34,19 +34,25 @@ function handleNav(event) {
   switch (event.key) {
     case "z":
       game = moveUp(game);
+      game = populateArray(1, game);
+      populateCubes(game);
       break;
     case "s":
       game = moveDown(game);
+      game = populateArray(1, game);
+      populateCubes(game);
       break;
     case "q":
       game = moveLeft(game);
+      game = populateArray(1, game);
+      populateCubes(game);
       break;
     case "d":
       game = moveRight(game);
+      game = populateArray(1, game);
+      populateCubes(game);
       break;
   }
-  game = populateArray(1, game);
-  populateCubes(game);
 }
 
 game = populateArray(3, game);
