@@ -32,11 +32,13 @@ let game = [
 
 function handleNav(event) {
   //en fonction de la touche on change de direction
+  //on sauvegarde l'état de la partie avant de faire n'importe qu'elle action
   localStorage.setItem("prevGame", game);
 
   switch (event.key) {
     case "z":
       game = moveUp(game);
+      // je compare l'état précedent contre le nouvel état du jeu
       if (checkArray(localStorage.getItem("prevGame"), game)) {
         game = populateArray(1, game);
         populateCubes(game);
