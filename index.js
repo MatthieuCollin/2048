@@ -1,5 +1,6 @@
 import generateMap from "./frame/generateMap/index.js";
 import populateCubes from "./frame/populateCubes/index.js";
+import checkArray from "./functions/checkArray/index.js";
 
 import moveDown from "./functions/movements/moveDown/index.js";
 import moveLeft from "./functions/movements/moveLeft/index.js";
@@ -31,26 +32,36 @@ let game = [
 
 function handleNav(event) {
   //en fonction de la touche on change de direction
+  localStorage.setItem("prevGame", game);
+
   switch (event.key) {
     case "z":
       game = moveUp(game);
-      game = populateArray(1, game);
-      populateCubes(game);
+      if (checkArray(localStorage.getItem("prevGame"), game)) {
+        game = populateArray(1, game);
+        populateCubes(game);
+      }
       break;
     case "s":
       game = moveDown(game);
-      game = populateArray(1, game);
-      populateCubes(game);
+      if (checkArray(localStorage.getItem("prevGame"), game)) {
+        game = populateArray(1, game);
+        populateCubes(game);
+      }
       break;
     case "q":
       game = moveLeft(game);
-      game = populateArray(1, game);
-      populateCubes(game);
+      if (checkArray(localStorage.getItem("prevGame"), game)) {
+        game = populateArray(1, game);
+        populateCubes(game);
+      }
       break;
     case "d":
       game = moveRight(game);
-      game = populateArray(1, game);
-      populateCubes(game);
+      if (checkArray(localStorage.getItem("prevGame"), game)) {
+        game = populateArray(1, game);
+        populateCubes(game);
+      }
       break;
   }
 }
