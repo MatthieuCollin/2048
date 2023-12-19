@@ -7,17 +7,32 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <p>Score :</p>
     <div class="frame" id="frame">
         
 
     </div>
+    <div> <a href="">Github</a>
+    <a href="">Linkedin</a></div>
     <div class="popup-frame" id="popup">
         <div class="popup">
             <h1>Bienvenue sur le jeu 2048 !</h1>
             <p>Pour jouer, il faut utiliser les touches Z(avant), S(arrière), Q(gauche), D(gauche)</p>
             <div class="space"></div>
             <p>Ce jeu à était codé par Matthieu Collin. Pour plus d'information, veuillez visiter mon <a href="https://devwebcollin.netlify.app">site web.</a> </p>
-            <input type="button" class="button" value="jouer !" id="start">
+
+            <form action="" id="form">
+                <p>Quel niveau de difficulté voulez vous choisir (plus le chiffre est petit, plus le niveau de jeu est difficile) ? </p>
+                <select name="difficulty">
+                    <option value="7">7x7</option>
+                    <option value="6">6x6</option>
+                    <option value="5">5x5</option>
+                    <option value="4">4x4</option>
+                    <option value="3">3x3</option>
+                </select>
+                <input type="submit" class="button" value="jouer !" id="start">
+
+            </form>
         </div>
     </div>
 </body>

@@ -9,26 +9,33 @@ import moveUp from "./functions/movements/moveUp/index.js";
 
 import populateArray from "./functions/populateArray/index.js";
 
+let game = [];
+
 const frame = document.getElementById("frame");
-const start = document.getElementById("start");
+const form = document.getElementById("form");
 const popup = document.getElementById("popup");
 
-start.addEventListener("click", function (event) {
+form.addEventListener("submit", function (event) {
   // quand input clavier
+  event.preventDefault();
+  let difficulty = event.target.children.difficulty.value;
+  console.log(difficulty);
+  for (let i = 0; i < difficulty; i++) {
+    game.push([]);
+    for (let j = 0; j < difficulty; j++) {
+      console.log(game);
+      game[i].push(0);
+    }
+  }
+  game = populateArray(3, game);
+
+  generateMap(game, frame);
   popup.remove();
   document.addEventListener("keydown", function (event) {
     // on check l'event
     handleNav(event);
   });
 });
-
-// tableau matrice
-let game = [
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-];
 
 function handleNav(event) {
   //en fonction de la touche on change de direction
@@ -67,7 +74,3 @@ function handleNav(event) {
       break;
   }
 }
-
-game = populateArray(3, game);
-
-generateMap(game, frame);
